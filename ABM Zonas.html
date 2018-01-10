@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Supervisor</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/funciones.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+               
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <img class="logo" src="img/logo.jpg" alt="logo">
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="#">Home</a></li>
+
+                        <li><a href="ABM camiones.html">Camiones</a></li>
+                        <li><a href="ABM zonas.html">Zonas</a></li>
+                        <li><a href="Reportes.html">Reportes</a></li>
+                        <li><a href="Modificaciones.html">Modificaciones</a></li>
+                        <li class="nombre">Nombre Usuario</li>
+                        <li><a id="login" href="#"><span class="glyphicon">&#xe163;</span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+                <h1>  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 
+                    Panel Supervisor </h1>
+            </div>
+
+             <!-- modal agregar zona -->
+            <div id="nuevaZona" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Zona</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="number" id="impNumero" class="form-control"   >
+                            <div id="campo1"></div>
+                            
+                            <label>Area Total</label>
+                            <input type="number" id="impArea" class="form-control"  placeholder="00 Km" required="required">
+                            <div id="campo2" ></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button  id="btnCancelar" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button  id="btnAgregar" type="button" class="btn btn-primary" data-dismiss="modal">Agregar</button><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin modal agregar zona -->
+
+            <!-- modal eliminar -->
+            <div class="modal fade" tabindex="-1" role="dialog" id="confirmarEliminar">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Confirmar Eliminar</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Confirma que quiere eliminar la zona seleccionada?</p>
+                            <input type="hidden" id="impId" class="form-control"   >
+                            <input type="hidden" id="inpActivo" class="form-control"   >
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ fin modal eliminar -->
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="panel panel-success">
+                            <div class="panel-heading" align="center">Administrar Zonas</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover" id="tablaZona">
+                                            <thead>
+                                            <tr>
+                                                <th>Número</th>
+                                                <th>Area Total</th>
+                                                <th>Edición</th>
+                                            </tr>
+                                            </thead> 
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

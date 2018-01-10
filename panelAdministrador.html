@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Administrador</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <img class="logo" src="img/logo.jpg" alt="logo">
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="Index.html">Home</a></li>
+                        <li class="nombre">Nombre Usuario</li>
+                        <li><a id="login" href="#"><span class="glyphicon">&#xe163;</span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+                <h1>  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    Panel Administrador
+                </h1>
+            </div>
+
+            <!-- modal eliminar -->
+            <div class="modal fade" tabindex="-1" role="dialog" id="confirmarEliminar">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Confirmar Eliminar</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3>Datos de Usuario</h3>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset disabled>
+                                        <div class="form-group">
+                                            <label for="inpNombre">Nombre:</label>    
+                                            <input type="text" id="inpRazon" class="form-control" 
+                                                   placeholder="Jorge">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="impEmail">Email:</label>               
+                                            <input type="email" id="inpEmail" class="form-control" 
+                                                   placeholder="Pepe@sociedadanonima.com">
+                                        </div>
+                                        <div class="form-group"> 
+                                            <label for="impIva">Tipo Usuario: </label>              
+                                            <input type="text" id="inpUsuario" class="form-control" 
+                                                   placeholder="Administrador">
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-danger">Aceptar</button>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ modal eliminar -->
+
+            <!-- Modal usuario-->
+
+            <div class="modal fade" id="modalAgregarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">{ crear } Usuario</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3>Datos de Usuario</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset >
+                                        <div class="form-group"> 
+                                            <label for="impNombre">Nombre: </label>              
+                                            <input type="text" id="impNombre" class="form-control" 
+                                                   placeholder="Jorge" required pattern="/^[a-zA-Z\s]+$/">
+                                        </div>
+                                        <div id="campo5"></div>
+                                        <div class="form-group"> 
+                                            <label for="impDir">Dirección: </label>             
+                                            <input type="text" id="impDir" class="form-control" 
+                                                   placeholder="Alfonsina Storni 41" required pattern="/^[0-9]{2}-[0-9]{8}-[0-9]$/">
+                                        </div>
+                                        <div id="campo6"></div>
+                                        <div class="form-group"> 
+                                            <label for="impCod">Código Postal: </label>         
+                                            <input type="text" id="impCod" class="form-control" 
+                                                   placeholder="1803" required="required" pattern="/[0-9]{4}/">
+                                        </div>
+                                        <div id="campo7"></div>
+                                        <div class="form-group"> 
+                                            <label for="impLoc">Localidad: </label>             
+                                            <input type="text" id="impLoc" class="form-control" 
+                                                   placeholder="Ezeiza" required="required" pattern="/^[0-9]{2}-[0-9]{8}-[0-9]$/">
+                                        </div>
+                                        <div id="campo8"></div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6">
+                                    <fieldset>
+                                        
+                                        <div class="form-group">
+                                            <label for="impEmail">Email:</label>               
+                                            <input type="email" id="impEmail" class="form-control" 
+                                                   placeholder="Pepe@sociedadanonima.com" required="required">
+                                        </div>
+                                        <div id="campo2"></div>
+                                        <div class="form-group">
+                                            <label for="selTipo">Tipo de Usuario: </label>
+                                            <select class="form-control" id="selTipo">
+                                                <option value="0">Elija un tipo de usuario</option>
+                                                <option value="1">Cliente</option>
+                                                <option value="2">Empleado Administrativo</option>
+                                                <option value="3">Supervisor</option>
+                                                <option value="4">Administrador</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary">Crear Usuario</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FIN Modal usuario-->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="panel panel-success">
+                            <div class="panel-heading" align="center">Administrar usuarios</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group col-md-9">
+                                        <label class="sr-only" for="textBuscar">Buscar...</label>
+                                        <input type="text" class="form-control" id="textBuscar" placeholder="Buscar...">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button type="button" class="btn btn-primary" id="btn-id"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                    </div>
+                                    <div class="col-md-offset-10 col-xs-offset-8">
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalAgregarUsuario">
+                                            <span class="glyphicon glyphicon-file" ></span>
+                                            Nuevo
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th>Número</th>
+                                                <th>Nombre</th>
+                                                <th>Dirección</th>
+                                                <th>Localidad</th>
+                                                <th>Codigo Postal</th>
+                                                <th>Correo electronico</th>
+                                                <th>Tipo</th>
+                                                <th>Edicion</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td>0001</td>
+                                                <td>Pepe</td>
+                                                <td>Calle xxx</td>
+                                                <td>Monte Grande</td>
+                                                <td>1842</td>
+                                                <td>pepito@mail.com</td>
+                                                <td>Administrativo</td>
+                                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmarEliminar"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarUsuario"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>0002</td>
+                                                <td>Homero</td>
+                                                <td>Calle siempreviva</td>
+                                                <td>Monte Grande</td>
+                                                <td>1842</td>
+                                                <td>jhomreo12@mail.com</td>
+                                                <td>Usuario</td>
+                                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmarEliminar"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalAgregarUsuario"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

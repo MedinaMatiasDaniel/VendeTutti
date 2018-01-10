@@ -1,0 +1,17 @@
+administrador : administrador@hotmail.com
+contraseña: 1123
+hash: 2cfd4560539f887a5e420412b370b361
+
+
+supervisor: supervisor@hotmail.com
+contraseña: 1124
+hash: c7635bfd99248a2cdef8249ef7bfbef4
+
+
+administrativo: administrativohotmail.com
+contraseña: 1125
+hash: c21002f464c5fc5bee3b98ced83963b8
+
+
+
+

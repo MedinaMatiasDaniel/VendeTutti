@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contacto</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <img class="logo" src="img/logo.jpg" alt="logo">
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="quienesSomos.html">Quienes Somos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#" id="login" data-toggle="modal" data-target="#ModalIniciar"><span id="login" class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- MODAL LOGIN -->
+        <div class="container">
+            <div id="ModalIniciar" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Iniciar sesion</h4>
+                        </div>
+                        <div id="logIn" class="modal-body">        
+                            <label>Correo electronico</label>
+                            <input type="text" id="inpRecuperar" class="form-control"  placeholder="Correo electrónico">
+                            <label>Contraseña</label>
+                            <input type="password" id="inpContraseña" class="form-control"  placeholder="Correo electrónico">
+                        </div>
+                        <div id="olvideContra" class="modal-footer">
+                            <button  id="btnCancelar" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button  id="btnIniciar" type="button" class="btn btn-primary" data-dismiss="modal">Iniciar</button><br>
+                            <a class="link" id="link" href="#" data-toggle="modal" data-target="#ModalRecuperar" onclick="ocultar();">Olvide Contraseña</a>
+                        </div>
+                        <div>
+                            <div class="modal-header">
+                                <h4 class="modal-title">Recuperar contraseña</h4>
+                            </div>
+                            <div class="modal-body">        
+                                <label>Email</label>
+                                <input type="email" id="inp" class="form-control"  placeholder="Correo electrónico">
+                            </div>
+                            <div class="modal-footer">
+                                <button  id="btnCancelar-recuperar" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                <button  id="btnEnviar-recuperar" type="button" class="btn btn-primary" data-dismiss="modal">Enviar contraseña</button><br><!-- <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalUsuario"><span class="glyphicon glyphicon-pencil" aria-hidden="true"> -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- FIN MODAL RECUPERAR CONTRASEÑA -->
+        <!-- FIN MODAL LOGING -->
+        
+            <div class="container-fluid">
+                <h3><u> Datos de contacto:</u></h3>
+                <h5>Email: </h5><a href="">vendetutti@ventas.com</a>
+                <h5>Telefono:  3638-9240 </h5>
+                <h5>Direccion:  Alfonsina Storni 41, Ezeiza, Buenos Aires, Argentina </h5>
+            </div>
+        </div>
+    </body>
+</html>

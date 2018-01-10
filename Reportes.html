@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Supervisor</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <img class="logo" src="img/logo.jpg" alt="logo">
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav nav-justified">
+                        <li class="active"><a href="panelSupervisor.html">Home</a></li>                        
+                        <li><a href="ABM camiones.html">Camiones</a></li>
+                        <li><a href="ABM zonas.html">Zonas</a></li>
+                        <li><a href="Reportes.html">Reportes</a></li>
+                        <li><a href="Modificaciones.html">Modificaciones</a></li>
+                        <li class="nombre">Nombre Usuario</li>
+                        <li><a id="login" href="#"><span class="glyphicon">&#xe163;</span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="page-header">
+                <h1>  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>   Panel Supervisor </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Panel Reporte ordenes Envio -->
+                    <div class="row">
+                        <div class="panel panel-success">
+                            <div class="panel-heading" align="center">Reporte Ordenes de Envio</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group col-md-2">
+                                        <label class="sr-only" for="textBuscar">Buscar...</label>
+                                        <input type="text" class="form-control" id="textBuscar" placeholder="Buscar...">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-control">
+                                            <option value="0">Estado</option>
+                                            <option value="1">Sin Rendir</option>
+                                            <option value="2">Entregada con Éxito</option>
+                                            <option value="3">Entregado con Observaciones</option>
+                                            <option value="4">No Entregado</option>
+                                            <option value="5">Rechazado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input id="inputFecha1" name="name" type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input id="inputFecha2" name="name" type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-control">
+                                            <option value="">Zona</option>
+                                            <option value="">Zona2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-control">
+                                            <option value="0">Camion</option>
+                                            <option value="1">Camion 1</option>
+                                            <option value="2">Camion 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th>Número</th>
+                                                <th>Cliente</th>
+                                                <th>Estado</th>
+                                                <th>Fecha de ingreso</th>
+                                                <th>Fecha de entrega prevista</th>
+                                                <th>Zona</th>
+                                                <th>Camión</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td>0001</td>
+                                                <td>Pepe</td>
+                                                <td>Entregado</td>
+                                                <td>10/11/2017</td>
+                                                <td>20/11/2017</td>
+                                                <td>Zona 1</td>
+                                                <td>32</td>
+                                                <td>Sin observaciones</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>0003</td>
+                                                <td>Pepito</td>
+                                                <td>No Entregado</td>
+                                                <td>10/5/2017</td>
+                                                <td>20/5/2017</td>
+                                                <td>Zona 2</td>
+                                                <td>321</td>
+                                                <td>Sin observaciones</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ Panel Reporte ordenes Envio -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
